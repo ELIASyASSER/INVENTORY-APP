@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverntory Project</title>
+</head>
+<body>
+    <header>
+        <span>Inventory Project</span>
+    </header>
+    <div class="container">
+        <div class="left-container">
+            <a href="#">Dashboard</a>
+            <a href="#">About</a>
+            
+        </div>
+        
+        <div class="content">
+            <h2>Dashboard</h2>
+            <a href="./add/product"> +Add Product</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Product </th>
+                        <th>Price</th>
+                        <th>Amount</th>
+                        <th > Status</th>
+                        
+                    </tr>
+                </thead>
+                <%- include('./_tableBody.ejs') %>
+
+            </table>
+            
+        </div>
+
+        
+    </div>
+</body>
+</html>

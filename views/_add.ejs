@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add products</title>
+    <link rel="stylesheet" href="/css/upd.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create :<span>New Product</span></h2>
+        <div class="items">
+            <form action="/add/product" method="post">
+                <label for="product">Product Name</label>
+                <input type="text" name="product" id="product">
+
+                <label for="price">Product Price</label>
+                <input type="number" name="price" id="price">
+                
+                
+                <label for="price">Amount</label>
+                <input type="number" name="amount" id="amount">
+                <label for="status">Status</label>
+                <select name="status" id="status" >
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                    <option value="process">Process</option>
+                </select>
+                
+                
+                
+                
+                <button class="update" type="submit" style="background-color: green; color: white;">Create</button>
+            </form>
+            <a href="/" class="back">Back Dashboard</a>
+        </div>
+    </div>
+    
+</body>
+</html>

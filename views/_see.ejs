@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/see.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="id">
+            <span id="ii">The ID: </span>
+            <p><%= prod.id %></p>
+        </div>
+        <div class="created">
+            <span>CreatedAt</span>
+            <p><%= prod.createdAt.toDateString() %></p>
+        </div>
+        
+        <div class="name">
+            <span>Brand :</span>
+            <p> <%= prod.name %></p>
+        </div>
+        <div class="status">
+            <span>Status</span>
+            <p><%= prod.status %></p>
+        </div>
+        <div class="price">
+            <span>Product Price</span>
+            <p class="pr"><%= prod.price.split("_").join("") %>$</p>
+        </div>
+
+        <div class="Amount">
+            <span>Product Amount</span>
+            <p><%= prod.amount %> </p>
+        </div>
+        
+        <a href="/">DashBoard</a>
+    </div>
+</body>
+</html>
