@@ -23,10 +23,13 @@
                 <label for="price">Amount</label>
                 <input type="number" name="amount" id="amount" value="<%= myproduct.amount %>">
                 <label for="status">Status</label>
-                <select name="status" id="status"  >
+                <select name="status" id="status">
+                        <option style="font-weight: bold;color: white;background-color: black;" value="<%= myproduct.status %>"><%= myproduct.status %></option>
                     <option value="active">Active</option>
                     <option value="inactive">Inactive</option>
                     <option value="process">Process</option>
+
+                
                 </select>
                 
                 
