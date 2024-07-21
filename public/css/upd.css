@@ -64,6 +64,10 @@ select{
     background-color: rgb(37, 221, 37);
 
 }
+.update:hover{
+    background-color: rgb(2, 205, 2);
+    color: white;
+}
 .back{
     text-decoration: none;
     color: black;
@@ -72,7 +76,13 @@ select{
     text-align: center;
     font-size: 20px;
     border: 2px solid black;
+    transition: 0.4s;
     font-weight: bold;
+    border-radius: 10px;
     width: fit-content;
     margin: auto;
 } 
+.back:hover{
+    background-color: black;
+    color: white;
+}

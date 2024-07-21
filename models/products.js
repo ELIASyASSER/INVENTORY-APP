@@ -19,6 +19,22 @@ const prosSchema = new mongoose.Schema({
     createdAt:{
         type:Date,
         default:Date.now()
+    },
+    category:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Category",
+        required:[true,'please provide the category']
     }
 })
-module.exports = mongoose.model("Product",prosSchema);
+
+const categorySchma = new mongoose.Schema({
+    name:{
+        type:String,
+        required:[true,"please enter the content of category"],
+        unique:true
+    },
+})
+
+const Product = mongoose.model("Product",prosSchema);
+const Category = mongoose.model("Category",categorySchma);
+module.exports = {Product,Category} ;

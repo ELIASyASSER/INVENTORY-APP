@@ -5,7 +5,7 @@ const connDB = require("./connection/conn");
 const errorMiddleWare = require("./middleware/errorMiddlware");
 const notfound = require("./middleware/notfound");
 require("dotenv").config()
-const Product = require("./models/products")
+const {Product,Category} = require("./models/products")
 
 //middlewares
 app.use(exp.static("./public"))
@@ -38,7 +38,7 @@ app.get("/add/product",(req,res)=>{
 
 app.post("/add/product",async(req,res)=>{
     // console.log(req.body);
-    const {product,status} = req.body
+    const {product,status,category} = req.body
     const price = req.body.price.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1_')
     const amount = req.body.amount.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1_')
     
@@ -48,10 +48,14 @@ app.post("/add/product",async(req,res)=>{
             name:product,
             price:price,
             amount:amount,
-            status:status
-        })
+            status:status,
+            category:category,
+            
+            
 
-    
+        })
+      
+
         res.redirect("/")
 
     
@@ -60,6 +64,18 @@ app.post("/add/product",async(req,res)=>{
     }
 
 })
+
+
+app.get('/categories', async (req, res) => {
+    try {
+      const categories = await Category.find();
+      res.render('_cat.ejs', { categories });
+    } catch (err) {
+      res.status(500).send(err.message);
+    }
+  });
+  
+
 
 app.get("/update/product/:id",async(req,res)=>{
 

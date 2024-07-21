@@ -51,12 +51,12 @@ a{
 .left-container a{
     transition: 0.5s;
     border-radius: 5px;
+    color: black;
+    border: 2px solid black;
     display: block;
     /* background-color: black; */
-    color: black;
     font-size: 18px;
     font-weight: bold;
-    border: 2px solid black;
     padding: 10px 20px;
     margin: 4px;
     text-align: center;
@@ -92,7 +92,11 @@ a{
     font-size: 18px;
     font-weight: bold;
     border: 2px solid black;
-    text-align: center;
+    transition: 0.5s;
+}
+.content >a:hover{
+    background-color: black;
+    color: white;
 }
 table{
     min-width: 510px;
