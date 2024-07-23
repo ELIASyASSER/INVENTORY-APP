@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const prosSchema = new mongoose.Schema({
     name:{
         type:String,
@@ -25,6 +26,8 @@ const prosSchema = new mongoose.Schema({
         ref:"Category",
         required:[true,'please provide the category']
     }
+
+    
 })
 
 const categorySchma = new mongoose.Schema({
@@ -34,6 +37,9 @@ const categorySchma = new mongoose.Schema({
         unique:true
     },
 })
+
+
+
 
 const Product = mongoose.model("Product",prosSchema);
 const Category = mongoose.model("Category",categorySchma);

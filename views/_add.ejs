@@ -18,13 +18,13 @@
 
 
                 <label for="category">Product Category</label>
-                <input type="text" name="category" id="category">
-
-
+                <select name="category" id="category">
+                    <% Cat.forEach(element => { %>
+                        <option  value="<%= element._id %>" ><%=  element.name  %></option>
+                    <% }) %>
+                </select>
                 <label for="price">Product Price</label>
                 <input type="number" name="price" id="price">
-                
-                
                 <label for="price">Amount</label>
                 <input type="number" name="amount" id="amount">
                 <label for="status">Status</label>
