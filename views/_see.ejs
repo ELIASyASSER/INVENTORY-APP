@@ -9,37 +9,49 @@
 
 <body>
     <div class="container">
-        <div class="id">
-            <span id="ii">The ID: </span>
+        <div class="id i">
+            <h2 id="ii">The ID: </h2>
             <p><%= prod.id %></p>
         </div>
-        <div class="created">
-            <span>CreatedAt</span>
+        <div class="created i">
+            <h2>CreatedAt</h2>
             <p><%= prod.createdAt.toDateString() %></p>
         </div>
-        
-        <div class="name">
-            <span>Brand :</span>
+
+
+        <div class="info">
+            <div>
+                
+        <div class="name f">
+            <h2>Brand :</h2>
             <p> <%= prod.name %></p>
         </div>
-        <div class="cat">
-            <span>Category :</span>
+        <div class="cat f">
+            <h2>Category :</h2>
             <p> <%= prod.category.name %></p>
         </div>
-        <div class="status">
-            <span>Status</span>
+    </div>
+    <div>
+
+        <div class="status f">
+            <h2>Status</h2>
             <p><%= prod.status %></p>
         </div>
-        <div class="price">
-            <span>Product Price</span>
+        <div class="price f">
+            <h2>Product Price</h2>
             <p class="pr"><%= prod.price.split("_").join("") %>$</p>
         </div>
+    </div>
+        <div>
 
-        <div class="Amount">
-            <span>Product Amount</span>
+        <div class="Amount f">
+            <h2>Product Amount</h2>
             <p><%= prod.amount %> </p>
         </div>
-        
+    </div>
+</div>
+
+
         <a href="/">DashBoard</a>
     </div>
 </body>

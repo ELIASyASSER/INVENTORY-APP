@@ -8,6 +8,8 @@
     <title>Inverntory Project</title>
 </head>
 <body>
+    <div class="all">
+
     <header>
         <span>Inventory Project</span>
     </header>
@@ -22,6 +24,7 @@
         <div class="content">
             <h2>Dashboard</h2>
             <a href="./add/product"> +Add Product</a>
+            <div class="table-repon">
             <table>
                 <thead>
                     <tr>
@@ -35,6 +38,8 @@
                     </tr>
                 </thead>
                 <%- include('./_tableBody.ejs') %>
+            </div>
+
 
             </table>
             
@@ -42,5 +47,6 @@
 
         
     </div>
+</div>
 </body>
 </html>

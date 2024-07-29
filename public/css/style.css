@@ -9,40 +9,35 @@ body{
     padding: 0;
     margin: 0;
 }
+.all{
+    /* overflow: hidden; */
+    height: 100vh;
+}
 header{
     background-color: #222;
     color: white;
-    overflow: hidden;
     height: 50px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
     
 }
 header span{
-    display: inline-block;
     font-size: 20px;
-    height: 100%;
-    width:fit-content;
-    text-align: center;
-    display: flex;
-    align-items: center;
     font-weight: bold;
-    padding: 0 40px;
 
 }
+
 .container{
-    /* height: 100%; */
-    /* width: 100%; */
-    position: relative;
-    /* background-color: red; */
+    display: flex;
+    gap: 20px;
 }
 .left-container{
     background-color: #ededed;
-    min-width: 140px;
+    min-width: 180px;
     width: 20%;
     padding: 10px;
     height: 100vh;
-    display: inline-block;
-    position: absolute;
-    left: 0;
 }
 a{
     text-decoration: none;
@@ -67,24 +62,20 @@ a{
 
 }
 .content{
-    position: relative;
-    width: 70%;
-    /* min-height: 100px; */
-    left:22%;
-    /* display: inline-block; */
-    /* background-color: aliceblue; */
+    flex: 1;
+    
 }
 .content h2{
     width: 80%;
     display: inline-block;
-    padding: 20px ;
+    padding: 20px 0 0 ;
     /* background-color: rebeccapurple; */
 }
 
 
 .content >a{
     width: 10%;
-    padding: 10px;
+    padding: 5px;
     margin-left: 10px;
     transition: 0.5s;
     border-radius: 5px;
@@ -93,51 +84,65 @@ a{
     font-weight: bold;
     border: 2px solid black;
     transition: 0.5s;
+
 }
 .content >a:hover{
     background-color: black;
     color: white;
 }
+
+@media (max-width:767px) {
+    .content h2{
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+    .content a{
+        margin: 0;
+
+    }
+    
+}
+.table-repon{
+    overflow-x: auto;
+    width: 100%;
+}
 table{
-    min-width: 510px;
+    min-width: 1000px;
     width: 100%;
     text-align: center;
     border-top: 2px solid green;
     padding-top: 10px;
+    margin-top: 20px;
     border-spacing: 0;
 }
-@media (max-width:1000px) {
-    table{
-        width: 50%;
-    }
-}
 table thead tr{
-    /* background-color: red; */
+    background-color: #eee;
 }
  td,th{
     padding: 10px;
-    border: 1px solid #888;
+    border: 1px solid #eeeeee;
 }
 
 td a{
     color: white;
-    display: inline-block;
     margin-left: 20px;
-    width: 20%;
     border-radius: 10px;
     font-weight: bold;
-    padding: 10px;
+    padding: 8px;
+}
+td a i{
 
 }
 td a:first-child{
     background-color: black;
     margin-left: -20px;
-
+    
 }
 td a:last-child{
     background-color: green;
 }
 td a:nth-child(2){
-    background-color: red;
+    background-color: red;  
 }
 
