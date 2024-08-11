@@ -1,8 +1,44 @@
-<h1>Register Here</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Create Account</h1>
+            <form action="/" method="post">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Create a password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" name="confirmPassword" id="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="/login">Log in</a></p>
+        </div>  
+    </div>
+    <script>
+        let username = document.querySelector("#username")
+        let email = document.querySelector("#email")
+        let password1 = document.querySelector("#password")
+        let password2 = document.querySelector("#confirm-password")
+        let form =document.querySelector("form")
 
-<form action="/reg" method="post">
-    <label for="">Enter Your Email</label>
-    <input type="text" placeholder="Enter Your Email" name="email">
-    <label for="">Enter Your Password</label>
-    <input type="password" placeholder="Enter Your Password" name="password">
-</form>
+    </script>
+</body>
+</html>

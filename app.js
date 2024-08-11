@@ -12,6 +12,7 @@ const usersRoute = require("./routes/users")
 const connDB = require("./connection/conn")
 const errorMiddleWare = require("./middleware/errorMiddlware")
 const notfound = require("./middleware/notfound")
+const auth = require("./middleware/auth")
 
 
 //middlewares
@@ -27,8 +28,9 @@ app.use(exp.static("./public"))
 app.use(exp.urlencoded({extended:true}))
 app.set('views engine','ejs')
 
-app.use('',productsRoute)
 app.use('',usersRoute)
+app.use('',auth,productsRoute)
+
 
 //errors middlewares
 app.use(errorMiddleWare)

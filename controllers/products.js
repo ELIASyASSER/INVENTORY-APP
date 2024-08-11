@@ -51,7 +51,6 @@ const addProduct = async(req,res)=>{
 
 }
 const showAddProduct = async(req,res)=>{
-    
     let Cat = await Category.find({})
     res.render("_add.ejs",{Product,Cat})
     
