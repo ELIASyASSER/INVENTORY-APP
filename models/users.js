@@ -44,7 +44,5 @@ userSchema.pre("save",async function(next){
     this.confirmPassword = undefined
     next()
 })
-userSchema.methods.createJwt = function () {
-    return jwt.sign({userId:this._id,userEmail:this.email},'secret',{expiresIn:"3d"})
-}
+
 module.exports = mongoose.model("User",userSchema)
