@@ -1,5 +1,6 @@
 require("dotenv").config()
-const exp =require("express")
+
+const exp = require("express")
 const app = exp()
 const ejs = require('ejs')
 const helmet =require("helmet")
@@ -39,8 +40,9 @@ app.use(session({
     saveUninitialized:false,
     cookie:{secure:false,
         httpOnly:true,
-        maxAge:30*60*1000,
-        sameSite:'lax'}
+        // maxAge:30*60*1000,
+        sameSite:'lax'
+    }
 
 }))
 app.use(passport.initialize())
@@ -68,11 +70,19 @@ passport.serializeUser((user,done)=>{
 passport.deserializeUser(async(id,done)=>{
     try {
         const user = await User.findById(id)
-        done(user,null)
+        done(null,user)
     } catch (error) {
-        done(error)
+        done(error,null)
     }
 })
+app.post(
+    "/login",
+    passport.authenticate("local", {
+      successRedirect: "/show",
+      failureRedirect: "/login"
+    })
+);
+
 app.use(exp.static("./public"))
 
 app.use('',usersRoute)

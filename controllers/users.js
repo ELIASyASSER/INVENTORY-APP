@@ -18,44 +18,18 @@ const postregisterUser = async(req,res)=>{
     }
 }
 
-
-
 const registerUser = async(req,res)=>{
     
     res.render("register.ejs")
 }
 
-const postloginUser = async(req,res,next)=>{
-    passport.authenticate("local",(err,user,info)=>{
-        if(err){
-            console.log(err);
-            return next(err)
-        } 
-        if(!user){
-            return res.redirect("/")
-        }
-        req.logIn(user,(err)=>{
-            if(err) {
-                console.log(err);
-                
-                return next(err)
-            }
-            return res.redirect("/show")
-        })
-    })(req,res,next)
-}
-
 const loginUser = async(req,res)=>{
     console.log(req.session);
-
     res.render("login.ejs")
 }
-
 
 module.exports = {
     postregisterUser,
     registerUser,
-    postloginUser,
     loginUser,
-
 }
