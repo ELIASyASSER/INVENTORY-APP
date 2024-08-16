@@ -26,7 +26,5 @@ router.get("/delete/product/:id",deleteProduct)
 //see product details
 router.get("/see/product/:id",productDetails)
 
-//show categories
-router.get('/categories',category)
 
 module.exports = router;

@@ -1,10 +1,8 @@
 const express = require("express")
+const {postregisterUser,loginUser, registerUser,postloginUser} = require("../controllers/users")
 const router = express.Router()
-const {postregisterUser,loginUser, registerUser} = require("../controllers/users")
-
 router.route('/signup').get(registerUser).post(postregisterUser)
 router.route('/login').get(loginUser)
-const {postregisterUser,loginUser, registerUser,postloginUser} = require("../controllers/users")
 const passport = require("passport")
 
 router.route('/')

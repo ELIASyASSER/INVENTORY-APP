@@ -22,23 +22,9 @@ const registerUser = async(req,res)=>{
 }
 
 const postloginUser = async(req,res,next)=>{
-    passport.authenticate("local",(err,user,info)=>{
-        if(err){
-            console.log(err);
-            return next(err)
-        } 
-        if(!user){
-            return res.redirect("/")
-        }
-        req.logIn(user,(err)=>{
-            if(err) {
-                console.log(err);
-                
-                return next(err)
-            }
-            return res.redirect("/show")
-        })
-    })(req,res,next)
+    // Here, only code that happens after the login is successful is needed because passport handles the checking
+    // of the username/password by the authentication strategy we specified in app.js
+    res.redirect("/show");
 }
 
 const loginUser = async(req,res)=>{
@@ -50,4 +36,6 @@ module.exports = {
     postregisterUser,
     registerUser,
     loginUser,
+    postloginUser
 }
+

@@ -103,31 +103,7 @@ const productDetails = async(req,res)=>{
 
     res.render("_see.ejs",{prod})
 }
-//show categories
-const category =  async (req, res) => {
-    try {
-    //   const categories = await Category.find({});
-      const Prods = await Product.find({}).populate("category");
-    //   await Category.create({name:"T-shirts"})
-    //   res.render('_cat.ejs', { categories });
-    // res.json({cats:categories})
 
-    // for (let i = 0; i < categories.length; i++) {
-    //     res.json(categories[i])
-        
-    // }
-    // categories.forEach(el=>{
-
-        // res. json((el.name))
-    // })
-    res.json(Prods)
-
-
-
-    } catch (err) {
-      res.status(500).send(err.message);
-    }
-}
 module.exports = {
     showProducts
     ,addProduct
@@ -136,5 +112,4 @@ module.exports = {
     ,updateProduct
     ,deleteProduct
     ,productDetails
-    ,category
 }
