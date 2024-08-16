@@ -20,6 +20,7 @@ const User = require("./models/users")
 const errorMiddleWare = require("./middleware/errorMiddlware")
 const notfound = require("./middleware/notfound")
 const bcrypt = require("bcryptjs")
+const authMiddleware = require("./middleware/auth");
 
 
 //middlewares
@@ -49,6 +50,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 passport.use(new localStrategy(async (username,password,done)=>{
+    console.log('authenticating', username, password);
     try {
         const user = await User.findOne({username:username})
         if(!user){
@@ -61,16 +63,21 @@ passport.use(new localStrategy(async (username,password,done)=>{
         return done(null,user)
 
     } catch (error) {
+        console.log('authentication error', error);
         done(error)
     }
 }))
 passport.serializeUser((user,done)=>{
+    console.log('serializing user', user);
     done(null,user.id)
 })
 passport.deserializeUser(async(id,done)=>{
+    console.log('deserializing user', id);
     try {
         const user = await User.findById(id)
-        done(null,user)
+
+        // Small mistake: first argument is always the error
+        done(null, user)
     } catch (error) {
         done(error,null)
     }
@@ -85,8 +92,14 @@ app.post(
 
 app.use(exp.static("./public"))
 
-app.use('',usersRoute)
-app.use('',productsRoute)
+app.use(usersRoute)
+
+app.use(
+    // Protect dashboard routes from being loaded without logging in first
+    authMiddleware,
+    productsRoute
+    
+);
 
 
 //errors middlewares

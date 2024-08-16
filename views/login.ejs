@@ -10,14 +10,17 @@
     <div class="container">
         <div class="form-container">
             <h1>Welcome Back</h1>
-            <form action="/login">
+            <!-- Small mistake, missing method="POST" -->
+            <form method="POST" action="/login">
                 <div class="input-group">
                     <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="Enter your username" required>
+                    <!-- Specify the name="username" here so that it's accessible by passport when it's sent to the backend -->
+                    <input name="username" type="text" id="username" placeholder="Enter your username" required>
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <!-- Same as above but for the password -->
+                    <input name="password" type="password" id="password" placeholder="Enter your password" required>
                 </div>
                 <button type="submit">Login</button>
             </form>
