@@ -26,7 +26,7 @@ const authMiddleware = require("./middleware/auth");
 //middlewares
 app.use(rateLimiter({
     windowMs:15*60*1000,
-    max:200 //limit each ip to 100 request per windowMs
+    max:200 //limit each ip to 200 request per windowMs
 }))
 app.use(helmet())
 app.use(cors())

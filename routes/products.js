@@ -11,7 +11,6 @@ const {
     productDetails,
     category
 } = require('../controllers/products')
-const auth = require("../middleware/auth")
 
 //showing all products
 router.get('/show',showProducts)

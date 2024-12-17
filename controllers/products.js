@@ -41,7 +41,7 @@ const addProduct = async(req,res)=>{
         })
       
 
-        res.redirect("/")
+        res.redirect("/show")
 
     
     } catch (error) {
@@ -71,7 +71,7 @@ const updateProduct = async(req,res)=>{
         category:category
 
     })
-    res.redirect("/")
+    res.redirect("/show")
 }
 const showUpdateProduct = async(req,res)=>{
     try {
@@ -95,7 +95,7 @@ const deleteProduct =  async(req,res)=>{
     })
     
     // console.log(prod);
-    res.redirect("/")
+    res.redirect("/show")
 }
 //show product details
 const productDetails = async(req,res)=>{
