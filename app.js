@@ -21,7 +21,7 @@ const errorMiddleWare = require("./middleware/errorMiddlware")
 const notfound = require("./middleware/notfound")
 const bcrypt = require("bcryptjs")
 const authMiddleware = require("./middleware/auth");
-// j
+
 
 
 //middlewares
